@@ -1,0 +1,73 @@
+{
+  "name": "dsh-gallery",
+  "description": "DeepSeek Harness 视觉输出通道插件：对话中横向可滑动的多图卡片，图片来自 CC 图库搜索并经可配置视觉模型（默认智谱 GLM-4V-Flash）筛选。",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": {
+      "default": "./lib/index.js"
+    },
+    "./client": {
+      "default": "./lib/client.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib/index.js",
+    "lib/client.js",
+    "SKILL.md",
+    "README.md",
+    "cordis.patch.yml"
+  ],
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "gallery",
+    "image",
+    "vision",
+    "plugin"
+  ],
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "^4.0.1",
+    "@deepseek-ai/dsh-client-ui-primitives": "^0.1.0-rc.6",
+    "react": "^18.0.0 || ^19.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.19.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "tsdown": "^0.22.2",
+    "typescript": "^5.6.0"
+  },
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.json",
+    "build:lib": "tsdown -c tsdown.config.ts",
+    "build": "tsc -p tsconfig.json && tsdown -c tsdown.config.ts",
+    "watch:client": "tsdown -c tsdown.config.ts --watch",
+    "test": "node --test src/shared/payload.test.ts src/plugin/host-settings.test.ts src/plugin/vision.test.ts src/plugin/tools.test.ts src/plugin/sources.test.ts src/plugin/integration.test.ts",
+    "test:browser": "node scripts/run-browser-test.mjs"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [],
+      "platform": "web",
+      "immediately": true
+    }
+  },
+  "packageManager": "pnpm@11.19.0",
+  "engines": {
+    "node": "^22.19.0 || >=24.0.0",
+    "pnpm": ">=11.7.0 <12"
+  },
+  "dependencies": {
+    "@deepseek-ai/schemastery": "^3.18.1",
+    "undici": "^8.10.0"
+  }
+}

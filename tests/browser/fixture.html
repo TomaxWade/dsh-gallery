@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <title>dsh-gallery 浏览器验收夹具</title>
+  <style>
+    body { background: #101216; color: #e5e7eb; font-family: sans-serif; padding: 24px; }
+    .md-code-block { background: rgba(255,255,255,0.06); border-radius: 8px; padding: 10px 14px; margin: 10px 0; }
+    .md-code-block pre { margin: 4px 0 0; white-space: pre-wrap; }
+  </style>
+</head>
+<body>
+  <h1>dsh-gallery 浏览器验收夹具（隔离环境，非真实 DSH 页面）</h1>
+
+  <!-- 静态块：页面加载时已存在（测试初始扫描路径） -->
+  <div id="static-valid" class="md-code-block">
+    <div>dsh-gallery</div>
+    <pre>{"title":"静态卡片","filtered":false,"images":[{"url":"https://raw.githubusercontent.com/omdsh-dev/dsh-genui/main/assets/showcase-panel.png","alt":"面板","caption":"展示面板","source":"GitHub","sourceUrl":"https://github.com/omdsh-dev/dsh-genui"},{"url":"https://raw.githubusercontent.com/omdsh-dev/dsh-genui/main/assets/upstream/infographic-reference.webp","caption":"信息图参考"}]}</pre>
+  </div>
+
+  <!-- 非法 JSON：应保持普通代码块，不被接管 -->
+  <div id="static-invalid" class="md-code-block">
+    <div>dsh-gallery</div>
+    <pre>{"images": [broken json</pre>
+  </div>
+
+  <!-- 动态注入块：测试 MutationObserver 路径 -->
+  <div id="dynamic-slot"></div>
+
+  <script>
+    // 最小模块加载器桩：执行 factory（bundle 内已内联 react），拿到 exports 后
+    // 像真实 cordis 客户端运行器一样调用 apply(ctx)。
+    window.__ModuleLoader__ = {
+      load(entry) {
+        const mod = entry.factory(() => {
+          throw new Error('fixture: unexpected require in test bundle');
+        });
+        const ctx = {
+          slots: {
+            inject() {
+              return undefined;
+            },
+          },
+        };
+        if (mod && typeof mod.apply === 'function') {
+          window.__DSH_TEST_PLUGIN_APPLIED__ = true;
+          mod.apply(ctx);
+        }
+      },
+    };
+  </script>
+  <script src="./client.js"></script>
+  <script>
+    // 动态注入（renderer 已安装后才出现）
+    setTimeout(() => {
+      const slot = document.getElementById('dynamic-slot');
+      const block = document.createElement('div');
+      block.className = 'md-code-block';
+      block.innerHTML =
+        '<div>dsh-gallery</div><pre>{"title":"动态卡片","images":[{"url":"https://raw.githubusercontent.com/omdsh-dev/dsh-genui/main/assets/upstream/ui-sketch.webp","caption":"手绘 UI"},{"url":"http://insecure.example/bad.jpg"},{"url":"data:image/png;base64,xx"}]}</pre>';
+      slot.appendChild(block);
+    }, 300);
+  </script>
+</body>
+</html>

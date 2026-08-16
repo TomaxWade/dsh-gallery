@@ -1,0 +1,9 @@
+# dsh-gallery bundle for DeepSeek Harness (dsh).
+# Inserted into the profile's composition when this bundle is installed
+# (`dsh plugin --profile web add link:<repo-dir>`).
+# node half: teaches the ```dsh-gallery fence + registers image_search /
+# vision_curate tools. client half: renders the fence as a horizontal
+# scrollable image card (DOM channel; stock rc.6 has no fence-registry).
+- insert:
+    - id: gallery
+      name: 'dsh-gallery'
