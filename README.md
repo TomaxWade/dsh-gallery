@@ -12,11 +12,13 @@ In one line: **give the DSH whale eyes, then show you what it saw.**
 | --- | --- |
 | <img src="assets/doubao.png" width="100%" alt="Doubao display"> | <img src="assets/dsh-gallery.png" width="100%" alt="dsh-gallery display"> |
 
-### More examples
+### Concept illustration: mechanical transmission structures
 
-<img src="assets/dsh-gallery-mechanical.png" width="100%" alt="Concept illustration: mechanical transmission structures">
+| Doubao (official chat UI) | dsh-gallery (this plugin) |
+| --- | --- |
+| <img src="assets/doubao-mechanical.png" width="100%" alt="Doubao: mechanical transmission structures"> | <img src="assets/dsh-gallery-mechanical.png" width="100%" alt="dsh-gallery: mechanical transmission structures"> |
 
-_Concept illustration — the plugin assembles searched images into a titled card, here covering common mechanical transmission structures._
+_The plugin assembles searched images into a titled card — here covering common mechanical transmission structures._
 
 ## Capabilities
 

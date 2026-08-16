@@ -12,9 +12,11 @@
 | --- | --- |
 | <img src="assets/doubao.png" width="100%" alt="豆包展示效果"> | <img src="assets/dsh-gallery.png" width="100%" alt="dsh-gallery 展示效果"> |
 
-### 更多示例
+### 概念配图示例：机械传动结构
 
-<img src="assets/dsh-gallery-mechanical.png" width="100%" alt="概念配图示例：机械传动结构">
+| 豆包（官方聊天界面） | dsh-gallery（本插件） |
+| --- | --- |
+| <img src="assets/doubao-mechanical.png" width="100%" alt="豆包：机械传动结构"> | <img src="assets/dsh-gallery-mechanical.png" width="100%" alt="dsh-gallery：机械传动结构"> |
 
 _概念配图示例——插件把搜索结果整理成带标题的卡片，这里覆盖了常见的机械传动结构。_
 
