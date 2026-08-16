@@ -12,6 +12,12 @@ In one line: **give the DSH whale eyes, then show you what it saw.**
 | --- | --- |
 | <img src="assets/doubao.png" width="100%" alt="Doubao display"> | <img src="assets/dsh-gallery.png" width="100%" alt="dsh-gallery display"> |
 
+### More examples
+
+<img src="assets/dsh-gallery-mechanical.png" width="100%" alt="Concept illustration: mechanical transmission structures">
+
+_Concept illustration — the plugin assembles searched images into a titled card, here covering common mechanical transmission structures._
+
 ## Capabilities
 
 - In-conversation image cards: horizontal scroll, tap to enlarge, caption + source attribution, an `unfiltered` badge when no vision model is configured

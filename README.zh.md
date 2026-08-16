@@ -12,6 +12,12 @@
 | --- | --- |
 | <img src="assets/doubao.png" width="100%" alt="豆包展示效果"> | <img src="assets/dsh-gallery.png" width="100%" alt="dsh-gallery 展示效果"> |
 
+### 更多示例
+
+<img src="assets/dsh-gallery-mechanical.png" width="100%" alt="概念配图示例：机械传动结构">
+
+_概念配图示例——插件把搜索结果整理成带标题的卡片，这里覆盖了常见的机械传动结构。_
+
 ## 能力
 
 - 对话内多图卡片：横向滑动、点按放大、说明与来源标注、`未筛选` 徽标（未配置视觉模型时）
