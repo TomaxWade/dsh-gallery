@@ -6,7 +6,11 @@
 
 一句话：**给 DSH 的鲸鱼装上眼睛，再把看到的世界拿给你看。**
 
+## 效果对比
 
+| 豆包（官方聊天界面） | dsh-gallery（本插件） |
+| --- | --- |
+| <img src="assets/doubao.png" width="100%" alt="豆包展示效果"> | <img src="assets/dsh-gallery.png" width="100%" alt="dsh-gallery 展示效果"> |
 
 ## 能力
 
@@ -38,7 +42,7 @@ dsh plugin --profile web add link:<仓库目录绝对路径>
 ## 验证命令
 
 ```powershell
-pnpm test               # 单测+集成（本地假三端走真实 fetch），28 条
+pnpm test               # 单测+集成（本地假三端走真实 fetch），33 条
 pnpm run test:browser   # 隔离 Chromium 浏览器验收，14 条（静态挂载/非法降级/动态注入/https白名单/lightbox/移动端横滑）
 pnpm run build
 node scripts\probe-glm.mjs glm-4.6v-flash   # 视觉 API 合同探测（不打印 key，读 .env.local）
@@ -49,12 +53,6 @@ node scripts\probe-glm.mjs glm-4.6v-flash   # 视觉 API 合同探测（不打�
 1. 新会话发："帮我找 5 张赛博朋克夜景参考图" → 预期：Agent 调 `image_search` → 回复中出现横向滑动图片卡片，点图放大、显示来源；未配置 Key 时卡片带「未筛选」。
 2. "差速器内部结构长什么样，配图说明" → 同上（概念配图链路）。
 3. 设置 → 视觉模型：填写 Key 后重试，卡片应去掉「未筛选」徽标（筛选生效）。
-
-## 效果对比
-
-| 豆包（官方聊天界面） | dsh-gallery（本插件） |
-| --- | --- |
-| <img src="assets/doubao.png" width="100%" alt="豆包展示效果"> | <img src="assets/dsh-gallery.png" width="100%" alt="dsh-gallery 展示效果"> |
 
 ## 命名
 

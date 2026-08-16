@@ -6,6 +6,12 @@ A **visual output channel plugin** for [DeepSeek Harness](https://github.com/dee
 
 In one line: **give the DSH whale eyes, then show you what it saw.**
 
+## Side-by-side
+
+| Doubao (official chat UI) | dsh-gallery (this plugin) |
+| --- | --- |
+| <img src="assets/doubao.png" width="100%" alt="Doubao display"> | <img src="assets/dsh-gallery.png" width="100%" alt="dsh-gallery display"> |
+
 ## Capabilities
 
 - In-conversation image cards: horizontal scroll, tap to enlarge, caption + source attribution, an `unfiltered` badge when no vision model is configured
@@ -37,7 +43,7 @@ Client-side iteration loop after the first load: `pnpm run build` → the page h
 ## Verification
 
 ```powershell
-pnpm test               # unit + integration (fake local triple endpoints, real fetch), 29 tests
+pnpm test               # unit + integration (fake local triple endpoints, real fetch), 33 tests
 pnpm run test:browser   # isolated Chromium acceptance, 14 checks (mount / invalid-degrade / mutation / https whitelist / lightbox / 375px scroll)
 pnpm run build
 node scripts\probe-glm.mjs glm-4.6v-flash   # vision API contract probe (never prints the key)
@@ -48,12 +54,6 @@ node scripts\probe-glm.mjs glm-4.6v-flash   # vision API contract probe (never p
 1. New conversation: "find me 5 cyberpunk night reference images" → the agent calls `image_search`, replies with a scrollable image card; tapping opens the lightbox with source links. Without a key the card shows the `unfiltered` badge.
 2. "What does a differential look like inside, with pictures" → same pipeline (concept illustration).
 3. Settings → Vision Model: after saving a key, re-run — the badge disappears (curation active).
-
-## Side-by-side
-
-| Doubao (official chat UI) | dsh-gallery (this plugin) |
-| --- | --- |
-| <img src="assets/doubao.png" width="100%" alt="Doubao display"> | <img src="assets/dsh-gallery.png" width="100%" alt="dsh-gallery display"> |
 
 ## Naming
 
