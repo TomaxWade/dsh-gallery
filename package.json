@@ -2,6 +2,7 @@
   "name": "dsh-gallery",
   "description": "DeepSeek Harness 视觉输出通道插件：对话中横向可滑动的多图卡片，图片来自 CC 图库搜索并经可配置视觉模型（默认智谱 GLM-4V-Flash）筛选。",
   "version": "0.1.0",
+  "license": "AGPL-3.0",
   "private": true,
   "type": "module",
   "main": "lib/index.js",

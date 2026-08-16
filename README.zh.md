@@ -58,6 +58,12 @@ node scripts\probe-glm.mjs glm-4.6v-flash   # 视觉 API 合同探测（不打�
 
 `dsh-gallery`：gallery（画廊/图廊）准确描述"横向滑动的多图展示"，符合 DSH 生态 `dsh-*` 命名惯例。备选：`dsh-lookbook`（灵感册，更偏素材场景）。
 
+## 许可证
+
+[AGPL-3.0](LICENSE) —— 任何使用（含商用）免费，但衍生作品（尤其是闭源的网络部署）必须同样以 AGPL-3.0 开源。**闭源商用需另行取得商业授权（收费，联系作者）。**
+
+Copyright (c) 2026 TomaxWade.
+
 ## 仓库边界
 
 - 不提交任何 API Key、凭据、用户图片与运行时数据（`.env.local`、`output/`、`tmp/` 已忽略）。

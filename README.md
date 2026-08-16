@@ -59,6 +59,12 @@ node scripts\probe-glm.mjs glm-4.6v-flash   # vision API contract probe (never p
 
 `dsh-gallery`: a gallery is exactly a horizontally scrollable set of images; follows the `dsh-*` ecosystem convention. Alternative considered: `dsh-lookbook`.
 
+## License
+
+[AGPL-3.0](LICENSE) — free for any use, including commercial use, as long as derivative works (especially closed-source network deployments) are released under the same license. **For closed-source commercial use, a separate commercial license is available on request.**
+
+Copyright (c) 2026 TomaxWade.
+
 ## Repository status
 
 No API keys, credentials, user images, or runtime data are committed (`.env.local`, `output/`, `tmp/` are ignored). Internal design docs (`docs/`) and agent rules (`AGENTS.md`) are kept local only.
